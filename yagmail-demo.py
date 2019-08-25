@@ -11,7 +11,7 @@ from email.header import Header
 smtp = smtplib.SMTP(host='smtp.naver.com', port=587)
 smtp.ehlo()
 smtp.starttls()
-smtp.login(user='cheri50', password='chldnrwls1!')
+smtp.login(user='cheri50', password='!')
 
 msg = MIMEText('본문입니다.')
 msg['Subject'] = Header('제목입니다', charset='utf-8')
