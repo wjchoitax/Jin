@@ -4,7 +4,7 @@ from selenium.webdriver.common.keys import Keys
 
 
 LOGIN_ID = 'wjchoi@ecredible.co.kr'
-LOGIN_PW = 'chldnrwls2#'
+LOGIN_PW = ''
 
 driver = webdriver.Chrome('./chromedriver')
 driver.get('https://webfax.uplus.co.kr/main')
