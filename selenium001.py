@@ -23,21 +23,25 @@ try:
     time.sleep(random.uniform(0.5, 2))
     driver.find_element_by_id('loginPwd').send_keys(LOGIN_PW)       # 로그인창에 PW 입력
     time.sleep(random.uniform(0.5, 2))
-    driver.find_element_by_id('loginBtn').click()
+    driver.find_element_by_id('loginBtn').click()                   # 로그인 버튼 클릭
     time.sleep(random.uniform(1, 2))
-
     driver.find_element_by_id('recvInfo').click()                   # 받은팩스함으로 이동
     time.sleep(random.uniform(0.5, 2))
 
-    list_select = Select(driver.find_element_by_id('selectRpp'))
+    # 출력날짜 설정
+    driver.find_element_by_id('sd').click()                         # 수신 시작일 날짜선택 달력 팝업
+    time.sleep(random.uniform(0.5, 2))
+    driver.find_element_by_id('ed').click()                         # 수신 종료일 날짜선택 달력 팝업
+    time.sleep(random.uniform(0.5, 2))
+
+    # driver.find_element_by_id('searchBtn').click()                # 검색 버튼 선택
+
+    # 발신번호 설정
+    list_select = Select(driver.find_element_by_id('selectRpp'))    # 목록 설정
     list_select.select_by_visible_text('100')
     time.sleep(random.uniform(1, 2))
-    # driver.find_element_by_id('sd').send_keys('20190901')           # 수신일 시작 입력
-    # time.sleep(random.uniform(0.5, 2))
-    # driver.find_element_by_id('sd').send_keys('20190903')           # 수신일 종료 입력
-    # time.sleep(random.uniform(0.5, 2))
-    #
-    # driver.find_element_by_id('searchBtn').click()                   # 검색 버튼 선택
+
+
 
 # driver.find_element_by_class_name('gnbSub_message').send_keys(Keys.RETURN)
 # driver.find_element_by_id('loginPwd').send_keys(Keys.RETURN)
